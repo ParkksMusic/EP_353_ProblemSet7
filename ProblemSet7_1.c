@@ -20,10 +20,7 @@ int main(int argc, char* argv[]){
         printf("The sound file %s could not be opened\n", argv[1]);
             exit(2);
     }
-    printf("Sample rate is %d\n", sfInfo.samplerate);
-    printf("The sound file has %lld\n", sfInfo.frames);
-    printf("The time of the sound file is %f\n", (double)sfInfo.frames / sfInfo.samplerate);
-
+    
     char command[100];
     sprintf(command, "sox \"%s\" -r 8000 plot.dat", argv[1]);
     system(command);
